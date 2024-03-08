@@ -1,26 +1,12 @@
 import "./App.css";
-import { useState } from "react";
-import { Board } from "./Board.jsx";
 
-function Square({ value }, { onSquareClick }) {
-  // const [value, setValue] = useState(null);
-
-  // function handleClick() {
-  //   setValue("X");
-  // }
-
-  return (
-    <button className="square" onClick={onSquareClick}>
-      {value}
-    </button>
-  );
-}
+import { Game } from "./Game.jsx";
 
 function App() {
   return (
     <main>
       <div className="board-container">
-        <Board />;
+        <Game />;
       </div>
     </main>
   );

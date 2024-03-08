@@ -1,10 +1,9 @@
-import { useState } from "react";
 import { Square } from "./Square.jsx";
 import { CalculateWinner } from "./CalculateWinner.jsx";
 
-export function Board() {
-  const [squares, setSquare] = useState(Array(9).fill(null));
-  const [xIsNext, setXIsNext] = useState(true);
+export function Board({ xIsNext, squares, onPlay }) {
+  //   const [squares, setSquare] = useState(Array(9).fill(null));
+  //   const [xIsNext, setXIsNext] = useState(true);
 
   function handleClick(i) {
     // checks first if the square is not null. returns early if it is not null.
@@ -19,8 +18,7 @@ export function Board() {
     } else {
       nextSquares[i] = "O";
     }
-    setSquare(nextSquares);
-    setXIsNext(!xIsNext);
+    onPlay(nextSquares);
   }
 
   const winner = CalculateWinner(squares);
