@@ -14,6 +14,16 @@ main {
   padding: 5%;
 }
 
+.board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status {
+  padding: 2rem 0;
+}
+
 .square {
   height: 10vw;
   width: 10vw;
